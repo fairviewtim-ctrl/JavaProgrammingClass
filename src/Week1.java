@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class test2 {
+public class Week1 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("What is your name?");
