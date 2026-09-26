@@ -1,5 +1,5 @@
-import java.util.Scanner; //
-import java.util.Random; //generates random numbers
+import java.util.Scanner;
+import java.util.Random;
 
 public class Week3 {
     static void main(String[] args) { //Method, where the prog. starts
