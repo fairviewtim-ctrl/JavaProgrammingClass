@@ -1,31 +1,29 @@
 import java.util.Scanner;
 import java.util.Random;
 
-
-
 public class AssignmentThree {
      public static void main(String[] args) {
          Scanner input = new Scanner(System.in);
          Random rand = new Random();
          String[] words = {"apple", "quiet", "water", "money", "plant"};
-         String word = words[rand.nextInt(5)];
+         String word = words[rand.nextInt(5)].toUpperCase();
          byte chance = 10;
          char guess = 'a';
-         boolean found = false;
          char[] display = new char[word.length()];
          for (int i = 0; i < word.length(); i++)
              display[i] = '_';
 
-         System.out.println("Your word is:");
-         System.out.println(display);
+         System.out.println("\nYour Word Is:");
+         System.out.println("******************************************");
+         System.out.println("\n                  " + new String(display));
+         System.out.println("\n******************************************");
 
 
-         //while statement asks for letter guess while chances are greater than 0
          while (chance > 0) {
-             System.out.println("You have " + chance + " chances remaining");
-             System.out.println("Guess a letter:");
-             guess = input.next().charAt(0);
-             System.out.println("You entered: " + guess);
+             boolean found = false;
+             System.out.println("\nGuess a Letter:");
+             guess = Character.toUpperCase(input.next().charAt(0));
+             System.out.println("You Entered: " + guess);
 
              for (int i = 0; i < word.length(); i++) {
                  if (word.charAt(i) == guess) {
@@ -33,10 +31,12 @@ public class AssignmentThree {
                      found = true;
                  }
              }
-                 System.out.println(display);
+             System.out.println("\n******************************************");
+             System.out.println("                  " + new String(display));
+             System.out.println("******************************************");
 
              if (new String(display).equals(word)) {
-                 System.out.println("You won! The word was: " + word);
+                 System.out.println("\nYou won! The word was: " + word);
                  break;
              }
              if (found) {
@@ -46,14 +46,14 @@ public class AssignmentThree {
 
              } else {
                  chance--;
-                 System.out.println("Incorrect! Try again!");
+                 System.out.println("\nIncorrect! Try Again! (" + chance + " Chances Remaining");
                  continue;
 
              }
          }
 
          if (chance == 0) {
-             System.out.println("You lost! Better luck next time!");
+             System.out.println("You Lost! Better Luck Next Time!");
          }
      }
         }
