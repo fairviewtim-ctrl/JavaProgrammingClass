@@ -32,8 +32,12 @@ public class AssignmentThree {
                      display[i] = guess;
                      found = true;
                  }
-
+             }
                  System.out.println(display);
+
+             if (new String(display).equals(word)) {
+                 System.out.println("You won! The word was: " + word);
+                 break;
              }
              if (found) {
                  System.out.println("Correct!");
